@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-
 }
 
 body{
@@ -41,16 +40,31 @@ header .logo-text a{
   color: white;
 }
 
-header nav ul{
+header .buger-nav{
+  display: none;
+}
+
+.buger-nav .menu-btn i{
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+
+.buger-nav #click{
+  display: none;
+}
+
+header .nomal-nav ul{
   list-style: none;
 }
 
-header nav ul li{
+header .nomal-nav ul li{
   display: inline-block; /* 横並び */
   margin: 0 15px;
 }
 
-header nav ul li a{
+header .nomal-nav ul li a{
   text-decoration: none;
   color: white;
   position: relative;
@@ -58,13 +72,13 @@ header nav ul li a{
 
 /* Start button */
 
-header nav ul .btn a{
+header .nomal-nav ul .btn a{
   color: black;
 }
 
 /* Button style */
 
-header nav ul .btn {
+header .nomal-nav ul .btn {
   background-color: #c2fbf4;
   border-radius: 100px;
   box-shadow: rgba(44, 187, 180, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 180, 0.15) 0 1px 2px,rgba(44, 187, 180, .15) 0 2px 4px,rgba(44, 187, 180, .15) 0 4px 8px,rgba(44, 187, 180, .15) 0 8px 16px,rgba(44, 187, 180, .15) 0 16px 32px;
@@ -83,14 +97,14 @@ header nav ul .btn {
   touch-action: manipulation;
 }
 
-header nav ul .btn:hover {
+header .nomal-nav ul .btn:hover {
   box-shadow: rgba(44,187,180,.35) 0 -25px 18px -14px inset,rgba(44,187,180,.25) 0 1px 2px,rgba(44,187,180,.25) 0 2px 4px,rgba(44,187,180,.25) 0 4px 8px,rgba(44,187,180,.25) 0 8px 16px,rgba(44,187,180,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
 
 /* li tag hover animetion */
 
-header nav ul .nomal a::after{
+header .nomal-nav ul .nomal a::after{
   content: "";
   position: absolute;
   display: block;
@@ -104,7 +118,7 @@ header nav ul .nomal a::after{
   transition: all 0.5s ease;  /* hover time */
 }
 
-header nav ul .nomal a:hover::after{
+header .nomal-nav ul .nomal a:hover::after{
   transform: scale(1, 1);
 }
 
@@ -137,54 +151,26 @@ main p{
   left: 50;
 	transform: translate(-50%,-50%);
 }
-h1{
+
+.content h1{
 	color: white;
 	margin: 20px 0px 20px;
 	font-size: 75px;
 }
-h3{
+
+.content h3{
 	color: white;
 	font-size: 25px;
 	margin-bottom: 50px;
 }
-h4{
+
+.content h4{
 	color: #ccffff;
 	letter-spacing: 2px;
 	font-size: 20px;
 }
-.newslatter form{
-	width: 380px;
-	max-width: 100%;
-	position: relative;
-  transform: translateX(+30%);
-}
-.newslatter form input:first-child{
-	display: inline-block;
-	width: 100%;
-	padding: 14px 130px 14px 15px;
-	border: 2px solid #7df9ff;
-	outline: none;
-	border-radius: 30px;
-  background-color: rgb(23, 23, 23);
-}
-
-.newslatter form input:last-child{
-	position: absolute;
-	display: inline-block;
-	outline: none;
-	border: none;
-	padding: 10px 30px;
-	border-radius: 30px;
-	background-color: #7df9ff;
-	color: black;
-	box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
-	top: 6px;
-  left: 250px;
-}
-
 
 /* Start RGB button */
-
 .glow-on-hover {
   margin-top: 40px;
   width: 300px;
@@ -249,7 +235,83 @@ h4{
 
 /* Start responsive */
 @media screen and (max-width: 730px), screen and (max-height: 650px) {
-  *{
+
+  /* Start burger nav */
+  .buger-nav .menu-btn i{
+    display: block;
+  }
+
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+
+  header .nomal-nav{
     display: none;
   }
+  
+  header .buger-nav{
+    display: contents;
+    display: flex;
+  }
+
+  header .buger-nav ul{
+    list-style: none;
+    position: fixed;
+    top: 120px;
+    right: -100%;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    z-index: 10;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+  }
+
+  #click:checked ~ ul{
+    right: 0%;
+  }
+
+  header .buger-nav ul li{
+    margin: 40px 0;
+  }
+
+  header .buger-nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 5px;
+  }
+
+  header .buger-nav ul li a:hover{
+    color: cyan;
+  }
+  /* ----- End buger nav ----- */
+
+  /* Start other css */
+
+  header .logo-text{
+    font-size: 30px;
+  }
+
+  main .content h1{
+    font-size: 45px;
+  }
+
+  main .content h3{
+    font-size: 15px;
+  }
+
+  main .content h4{
+    font-size: 12px;
+  }
+
+  main .content .glow-on-hover{
+    width: 265px;
+  }
+
 }

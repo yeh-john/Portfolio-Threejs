@@ -37,7 +37,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
  */
 
 // Add Particles ( Dots )
-const count = 600; // small dot amounts   7000
+const count = 700; // small dot amounts   7000
 const particlesGeometry = new THREE.BufferGeometry();
 const positionArray = new Float32Array(count *3);
 
