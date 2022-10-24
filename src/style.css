@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+body{
+  background-color: black;
+}
+
+#webgl{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header{
+  position: absolute; /* 絶対位置 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex; /* 横並び */
+  align-items: center; /* 中心に寄せる */
+  justify-content: space-around;
+  color: white;
+  padding-top: 40px;
+}
+
+
+header .logo-text{
+  /* margin-top: 50px; */
+  font-size: 37px;
+}
+
+header .logo-text a{
+  text-decoration: none;
+  color: white;
+}
+
+header nav ul{
+  list-style: none;
+}
+
+header nav ul li{
+  display: inline-block; /* 横並び */
+  margin: 0 15px;
+}
+
+header nav ul li a{
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+
+/* Start button */
+
+header nav ul .btn a{
+  color: black;
+}
+
+/* Button style */
+
+header nav ul .btn {
+  background-color: #c2fbf4;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 180, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 180, 0.15) 0 1px 2px,rgba(44, 187, 180, .15) 0 2px 4px,rgba(44, 187, 180, .15) 0 4px 8px,rgba(44, 187, 180, .15) 0 8px 16px,rgba(44, 187, 180, .15) 0 16px 32px;
+  color: lightblue;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+header nav ul .btn:hover {
+  box-shadow: rgba(44,187,180,.35) 0 -25px 18px -14px inset,rgba(44,187,180,.25) 0 1px 2px,rgba(44,187,180,.25) 0 2px 4px,rgba(44,187,180,.25) 0 4px 8px,rgba(44,187,180,.25) 0 8px 16px,rgba(44,187,180,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+/* li tag hover animetion */
+
+header nav ul .nomal a::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  left: 0;
+  bottom: -5px;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: all 0.5s ease;  /* hover time */
+}
+
+header nav ul .nomal a:hover::after{
+  transform: scale(1, 1);
+}
+
+
+/* Start main */
+
+main{
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+main h1{
+  white-space: nowrap;
+}
+
+main p{
+  margin-top: 10px;
+  font-size: 90%;
+}
+
+
+/* Start content */
+.content{
+	position: absolute;
+  top: 50;
+  left: 50;
+	transform: translate(-50%,-50%);
+}
+h1{
+	color: white;
+	margin: 20px 0px 20px;
+	font-size: 75px;
+}
+h3{
+	color: white;
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+h4{
+	color: #ccffff;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+.newslatter form{
+	width: 380px;
+	max-width: 100%;
+	position: relative;
+  transform: translateX(+30%);
+}
+.newslatter form input:first-child{
+	display: inline-block;
+	width: 100%;
+	padding: 14px 130px 14px 15px;
+	border: 2px solid #7df9ff;
+	outline: none;
+	border-radius: 30px;
+  background-color: rgb(23, 23, 23);
+}
+
+.newslatter form input:last-child{
+	position: absolute;
+	display: inline-block;
+	outline: none;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 30px;
+	background-color: #7df9ff;
+	color: black;
+	box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+	top: 6px;
+  left: 250px;
+}
+
+
+/* Start RGB button */
+
+.glow-on-hover {
+  margin-top: 40px;
+  width: 300px;
+  height: 50px;
+  outline: none;
+  color: white;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  border: none;
+  /* border: solid 2px rgb(80, 211, 255); */
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
