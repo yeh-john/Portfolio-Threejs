@@ -233,6 +233,11 @@ main p{
   100% { background-position: 0 0; }
 }
 
+/* Tiny host remove img */
+img{
+  display: none;
+}
+
 /* Start responsive */
 @media screen and (max-width: 730px), screen and (max-height: 650px) {
 
